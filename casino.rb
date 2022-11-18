@@ -4,7 +4,7 @@
 
 
 require_relative 'player'
-
+require_relative 'high_low'
 
 class Casino 
     def initialize 
@@ -25,7 +25,7 @@ class Casino
             when 1 
                 #todo slots
             when 2 
-                #high/low
+                Highlow.new(@player)
             when 3 
                 puts "you have $#{player.money}"
             when 4
@@ -34,6 +34,7 @@ class Casino
             else 
                 raise 
             end
+            show_menu
         rescue StandardError => e
             puts e 
             retry
