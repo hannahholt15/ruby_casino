@@ -26,4 +26,4 @@ class Highlow
         end
 
     end
-
+end

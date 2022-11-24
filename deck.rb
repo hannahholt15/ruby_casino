@@ -3,7 +3,6 @@ require_relative 'card'
 class Deck
     attr_accessor :cards
 
-
     def initialize
         @ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
         @suits = %w(Spades Diamonds Clubs Hearts)
@@ -22,7 +21,7 @@ class Deck
     def generate_deck
         @suits.each do |suit|
             @ranks.size.times do |i|
-                color = (suit == 'Spades' ||suit == 'Clubs') ?
+                color = (suit == 'Spades' || suit == 'Clubs') ?
                 @cards << Card.new(@ranks[i], suit, color)
             end   
         end
@@ -34,7 +33,3 @@ class Deck
         end
     end
 end
-
-
-
-

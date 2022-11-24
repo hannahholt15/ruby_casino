@@ -1,3 +1,5 @@
+
+require_relative 'deck'
 class Card
 
     attr_accessor :rank, :suit, :color

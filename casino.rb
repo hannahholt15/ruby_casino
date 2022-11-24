@@ -1,8 +1,5 @@
 
-
-
-
-
+# require_relative 'slots'
 require_relative 'player'
 require_relative 'high_low'
 
@@ -14,7 +11,7 @@ class Casino
 
     def show_menu
         begin
-            puts 'What would you like to do'
+            puts 'What game would you like to play'
             puts '1. Slots'
             puts '2. High / Low'
             puts '3. Check Wallet'
