@@ -1,5 +1,5 @@
 
-require_relative 'deck'
+require_relative "deck"
 class Card
 
     attr_accessor :rank, :suit, :color
@@ -29,4 +29,3 @@ class Card
     end
 
 end 
-Card.new

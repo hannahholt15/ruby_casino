@@ -1,26 +1,29 @@
-
-require_relative 'high_low'
-require_relative 'slots'
-require_relative 'player'
+require_relative "player"
+require_relative "high_low"
+require_relative "slots"
+require_relative "deck"
 
 class Casino 
-    def initialize 
+    attr_accessor :player
+
+    def initialize(player)
      @player = Player.new
-        show_menu
+     show_menu
     end
 
     def show_menu
         begin
-            puts 'What game would you like to play'
-            puts '1. Slots'
-            puts '2. High / Low'
-            puts '3. Check Wallet'
-            puts '4. Exit'
+            puts "Hello Welcome to our Casino"
+            puts "What game would you like to play"
+            puts "1. Slots"
+            puts "2. High / Low"
+            puts "3. Check Wallet"
+            puts "4. Exit"
             response = gets.strip.to_i
             raise "Bad Input" unless response > 0 && response < 5
             case response
             when 1 
-                 Slots.new(@player)
+                Slots.new(@player)
             when 2 
                 Highlow.new(@player)
             when 3 
@@ -29,14 +32,9 @@ class Casino
                 puts "Thanks for stopping by"
                 exit
             else 
-                raise 
+                puts "Invalid Selection, try again"
+                show_menu
             end
-            show_menu
-        rescue StandardError => e
-            puts e 
-            retry
         end
     end
 end
-
-Casino.new

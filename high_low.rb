@@ -1,10 +1,9 @@
-require_relative 'deck'
+require_relative "deck"
 
 class Highlow
     def initializer(player)
         @player = player
         @deck = Deck.new
-        play
     end
 
     def play
@@ -17,13 +16,9 @@ class Highlow
             print "(higher/lower:)"
             guess = gets.strip.downcase
             puts "The card is #{first_card}"
-
-
         else 
             puts "go home"
-            return
-        
+            show_menu
         end
-
     end
 end
