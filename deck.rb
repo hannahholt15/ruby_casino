@@ -23,7 +23,7 @@ class Deck
             @ranks.size.times do |i|
                 color = (suit == 'Spades' || suit == 'Clubs') ?
                 @cards << Card.new(@ranks[i], suit, color)
-            end   
+            end  
         end
     end
 
@@ -33,3 +33,4 @@ class Deck
         end
     end
 end
+Deck.new

@@ -1,7 +1,7 @@
 
-# require_relative 'slots'
-require_relative 'player'
 require_relative 'high_low'
+require_relative 'slots'
+require_relative 'player'
 
 class Casino 
     def initialize 
@@ -20,13 +20,13 @@ class Casino
             raise "Bad Input" unless response > 0 && response < 5
             case response
             when 1 
-                #todo slots
+                 Slots.new(@player)
             when 2 
                 Highlow.new(@player)
             when 3 
                 puts "you have $#{player.money}"
             when 4
-                puts "Have a nice day"
+                puts "Thanks for stopping by"
                 exit
             else 
                 raise 

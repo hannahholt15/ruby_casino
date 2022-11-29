@@ -29,3 +29,4 @@ class Card
     end
 
 end 
+Card.new
