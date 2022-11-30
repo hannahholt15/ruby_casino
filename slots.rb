@@ -1,9 +1,10 @@
 
 
-class Slots (slot 1, slot 2, slot 3)
+class Slots
     def initializer(player)
         @player = player
         slot_pic = ["Cherry", "$$$", "Clover", "Bell", "Horse Shoe", "Bar"]
+        play
     end
 
     def play
