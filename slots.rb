@@ -1,27 +1,35 @@
-
-
 class Slots
-    def initializer(player)
-        @player = player
-        slot_pic = ["Cherry", "$$$", "Clover", "Bell", "Horse Shoe", "Bar"]
-        play
+    def initialize(player)
+      @player= player
+      @random_1 = Array.new(1) {rand 7}
+      @random_2 = Array.new(1) {rand 7}
+      @random_3 = Array.new(1) {rand 7}
+      play
     end
-
+  
     def play
-        puts "How much would you like bet"
-        bet = gets.strip.to_i
-        if bet is > 0 
-        slot_pic1 = slot_pic.shuffle.first
-        slot_pic2 = slot_pic.shuffle.first
-        slot_pic3 = slot_pic.shuffle.first
-        print `clear`
-        puts "#{slot_pic1} - #{slot_pic2} - #{slot_pic3}"
-
-        winnings = bet * slots(slot_pic1, slot_pic2, slot_pic3)
-        puts "YOU WON $#{winnings}"
-
-        else 
-            puts "Thank you come again"
+      slot_1 = @random_1
+      slot_2 = @random_2
+      slot_3 = @random_3
+      puts "What is your wager ?"
+     wager= gets.strip.to_i
+      if wager > 0
+       puts "lets begin"
+       puts "#{slot_1}"
+       puts "#{slot_1},#{slot_2}"
+        puts "#{slot_1},#{slot_2},#{slot_3}" 
+       if win = slot_1 == slot_2 && slot_2 == slot_3
+       puts "you win"
+       wager *= -1 if !win
+        @player.money += wager 
+       else
+        !win = slot_1 == slot_2 && slot_2 == slot_3
+         puts "you lose"
+         wager *= -1 if !win
+        @player.money += wager 
+         return
         end
+      end
     end
-end
+  end
+  
