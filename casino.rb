@@ -33,7 +33,7 @@ class Casino
       when 3
         puts "you have $#{@player.money}"
       when 4 
-        puts "have a nice day" 
+        puts "have a nice day #{@player.name}" 
         exit
       else 
         raise
